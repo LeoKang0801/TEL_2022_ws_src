@@ -37,7 +37,7 @@ int main(int argc, char** argv){
     float freq = 5;
     ros::Rate rate(freq);
 
-    double roll, pitch, yaw;
+    double roll, pitch, yaw; // Can't use float!
 
 
     while(ros::ok()){
@@ -56,14 +56,9 @@ int main(int argc, char** argv){
         angle.y = pitch * 180 / M_PI;
         angle.z = yaw * 180 / M_PI;
 
-
-        // angle.data = ( imu.angular_velocity.z - last ) / freq + angle.data;
-
-        // last = imu.angular_velocity.z;
-
         //std::cout << "X : " << angle.x << std::endl;
-        //std::cout << "Y : " << angle.y << std::endl;
-        std::cout << "Z : " << angle.z << std::endl;
+        std::cout << "Y : " << angle.y << std::endl;
+        //std::cout << "Z : " << angle.z << std::endl;
 
         imu_angle_pub.publish(angle);
         rate.sleep();
