@@ -52,13 +52,13 @@ int main(int argc, char** argv){
         tf::Matrix3x3(q1).getRPY(roll, pitch, yaw);
 
         //angle.z = tf::getYaw(q1) * 180 / M_PI;
-        angle.x = roll * 180 / M_PI;
-        angle.y = pitch * 180 / M_PI;
-        angle.z = yaw * 180 / M_PI;
+        angle.x = roll * 180.0 / M_PI;
+        angle.y = pitch * 180.0 / M_PI;
+        angle.z = yaw * 180.0 / M_PI;
 
-        //std::cout << "X : " << angle.x << std::endl;
+        std::cout << "X : " << angle.x << std::endl;
         std::cout << "Y : " << angle.y << std::endl;
-        //std::cout << "Z : " << angle.z << std::endl;
+        std::cout << "Z : " << angle.z << std::endl << "--------------------------" << std::endl;
 
         imu_angle_pub.publish(angle);
         rate.sleep();
