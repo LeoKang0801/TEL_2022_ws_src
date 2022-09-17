@@ -30,8 +30,8 @@ int main(int argc, char** argv){
         
         std::cout << "Enter a point (x, y)" << std::endl;
 
-        std::cin >> goal.x;
-        std::cin >> goal.y;
+        std::cin >> goal.x >> goal.y;
+        // std::cin >> goal.y;
 
 
 
