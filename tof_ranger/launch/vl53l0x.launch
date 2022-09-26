@@ -1,0 +1,5 @@
+<launch>
+  <node name="vl53_tof_ranger" pkg="tof_ranger" type="tof_ranging.py" output="screen">
+    <rosparam file="$(find tof_ranger)/params/0505.yaml" command="load" />
+  </node>
+</launch>
